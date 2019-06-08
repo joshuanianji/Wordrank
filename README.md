@@ -1,6 +1,6 @@
 # WORKRANK
 
-An Elm application that ranks words based on usage.
+An application that ranks words based on usage.
 
 You can upload your own text file or type in your own text. 
 
