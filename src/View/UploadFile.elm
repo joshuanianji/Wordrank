@@ -7,7 +7,6 @@ module View.UploadFile exposing (uploadTextFileView)
 
 import Element exposing (Attribute, Element, centerX, column, el, fill, height, maximum, padding, paddingXY, px, scrollbarX, scrollbarY, spacing, text, width)
 import Element.Border as Border
-import Element.Events exposing (onClick)
 import Element.Font as Font
 import Element.Input exposing (button)
 import File exposing (File)
@@ -42,7 +41,7 @@ ifFileSelected model =
             column [ width fill, centerX, paddingXY 0 30, spacing 10 ]
                 [ -- button to select another file
                   button buttonStyling
-                    { onPress = Just (Debug.log "oh yeah they just pressed" ReqFile)
+                    { onPress = Just ReqFile
                     , label = text "Select a different .txt file"
                     }
 
@@ -163,10 +162,6 @@ dataTable model =
             Element.none
 
         Just list ->
-            let
-                data =
-                    toTypeAlias list
-            in
             Element.indexedTable
                 [ padding 10
                 , Border.width 1

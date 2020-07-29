@@ -5,7 +5,7 @@
 
 module Update exposing (update)
 
-import File exposing (File)
+import File
 import File.Select as Select
 import Model exposing (FileContent, Model)
 import Msg exposing (Msg(..))
@@ -27,7 +27,7 @@ update msg model =
 
         -- this uploads the file
         GotFile uploadedFile ->
-            if (File.mime uploadedFile |> String.left 5) == "text/" |> Debug.log "FileLoaded" then
+            if (File.mime uploadedFile |> String.left 5) == "text/" then
                 -- I put `FileContent (Just uploadedFile) Nothing Nothing Nothing` to allow me to completely reset the fileCOntent thing
                 ( { model
                     | fileContent =
@@ -71,7 +71,7 @@ update msg model =
                 fileString =
                     model.fileContent.fileText
             in
-            ( { model | fileContent = { c | tupleList = toDuplicateTuples (Debug.log "Alrighty we're about to debug this" fileString) } }, Cmd.none )
+            ( { model | fileContent = { c | tupleList = toDuplicateTuples fileString } }, Cmd.none )
 
         -- THIS SECTION IS ABOUT THE MESSAGES WHEN THE USER INPUTS THEIR OWN STRING
         UpdateInputText string ->
