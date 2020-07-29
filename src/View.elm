@@ -9,6 +9,7 @@ import Colours exposing (appBackgroundGray, fontColour)
 import Element exposing (Element, FocusStyle)
 import Element.Background as Background
 import Element.Font as Font
+import GithubLogo
 import Html exposing (Html)
 import Model exposing (Directory(..), Model)
 import Msg exposing (Msg(..))
@@ -41,6 +42,16 @@ view model =
             ]
         , Font.color fontColour
         , Background.color appBackgroundGray
+        , GithubLogo.view
+            { href = "https://github.com/joshuanianji/HIIT-Timer"
+            , bgColor = "rgb(215, 215, 215)"
+            , bodyColor = "rgb(51, 51, 61)"
+            }
+            |> Element.el
+                [ Element.alignRight
+                , Element.alignTop
+                ]
+            |> Element.inFront
         ]
     <|
         case model.directory of
