@@ -43,7 +43,7 @@ view model =
         , Font.color fontColour
         , Background.color appBackgroundGray
         , GithubLogo.view
-            { href = "https://github.com/joshuanianji/HIIT-Timer"
+            { href = "https://github.com/joshuanianji/Wordrank"
             , bgColor = "rgb(215, 215, 215)"
             , bodyColor = "rgb(51, 51, 61)"
             }
