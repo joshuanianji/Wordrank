@@ -6,7 +6,7 @@ You can upload your own text file or type in your own text.
 
 ## How to use
 
-Either run it yourself or try it [on my website](http://joshuaji.com/projects/word-rank)
+Either run it yourself or try it [on my website](http://joshuaji.com/wordrank)
 
 If you want to run it yourself,
 [this documentation](https://guide.elm-lang.org/install.html) should help.
